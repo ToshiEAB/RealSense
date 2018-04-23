@@ -1,0 +1,89 @@
+### Windows 8.1/10 ###
+
+<Notes>
+The following instructions assume that we will use a C++ compiler associated with Visual Studio.
+Thus, you need to install C++ components on Visual Studio if you haven't done it yet.
+Also you may need to update the C++ components in order to install an appropriate version of the compiler.  
+
+1. Download the latest version of source code (as a .zip folder) from https://github.com/IntelRealSense/librealsense/releases
+
+2. Extract contents of the folder
+
+3. Move the librealsense folder (e.g., librealsense-2.10.3) to the root directory of C drive, that is, C:\
+
+4. Make a new folder named "build" in the librealsense folder
+
+5. Run cmake-gui.exe
+Note: This file is located in the CMake folder.
+
+6. Click the "Browse Source..." button and select the opencv folder (e.g., C:/librealsense-2.10.3)
+
+7. Click the "Browse Build..." button and select the build folder (e.g., C:/librealsense-2.10.3/build)
+
+8. Click the "Configure" button
+
+9. Select an appropriate generator (e.g., "Visual Studio 14 2015 Win64" for a 64-bit OS. "14" means Visual Studio 2015. Check the appropriate number for the version you have.)
+Note: Enter "host=x64" under "Optional toolset to use" to allow for the use of the maximum capacity of RAM
+
+10. Click the "Finish" button
+Note: After configuration, check-mark "BUILD_WITH_OPENMP" for maximizing the speed of image processing (but it will use the full capacity of CPU)
+      Uncheck-mark "BUILD_WITH_OPENMP" for a moderate speed of image processing (The CPU usage will be moderate as well)
+
+11. Click the "Generate" button 
+
+12. Run librealsense.sln located in the build folder
+Note: Wait for a minute until parcing completes
+
+13. Change the configuration mode from "Debug" to "Release"
+Note: Wait for a minute until parcing completes
+
+14. Build the programs: "Build" tab --> "Build Solution" (Alternatively, press Ctrl + Shift + b)
+Note: Wait for a few minutes. This process creates a bunch of new files/folders in the build folder.
+
+15. Set an Environment Variable: 
+   a) "Control Panel" --> "System & Security" --> "System" --> "Advanced system settings" --> "Environment Variables" --> Select "Path" under "System variables" --> "Edit"
+   b) Add the path where .dll files are located (e.g., C:\librealsense-2.10.3\build\Release)
+
+16. Reboot computer for activating the new Environment Variable
+
+
+
+### Linux Ubuntu 16.04 ###
+
+1. Open Terminal
+
+2. sudo apt-get install libgtk-3-dev
+Note: This file is necessary for using the RealSense SDK 2.0 on Ubuntu
+
+3. Download the latest version of source code (as a .tar.gz folder) from https://github.com/IntelRealSense/librealsense/releases
+Note: Hereafter let's assume that you download librealsense-2.10.3.tar.gz (Replace the version number if you are using a later version).
+
+4. cd ~/Downloads
+Note: Go to the Downloads folder
+
+5. mv librealsense-2.10.3.tar.gz ~/Documents/librealsense-2.10.3.tar.gz
+Note: Move the file for the Documents folder
+
+6. cd ~/Documents
+Note: Go to the Documents folder
+
+7. tar xvzf librealsense-2.10.3.tar.gz
+Note: Extract contents of folder
+
+8. cd  librealsense-2.10.3
+Note: Go to the new folder
+
+9. mkdir build
+Note: Make a new folder named "build"
+
+10. cd build
+Note: Go to the build folder
+
+11. cmake ..
+Note: Configure librealsense
+
+12. cmake --build . --config Release
+Note: Build librealsense in Release mode
+
+13. export PATH="~/Documents/librealsense-2.10.3/build:$PATH"
+Note: Set an environment path

@@ -1,0 +1,48 @@
+### Windows 8.1/10 ###
+<How to download>
+1. Go to https://cmake.org/download/
+
+2. Select a binary distribution (e.g., cmake-3.11.0-win64-x64.zip for a 64-bit OS)
+Note: The actual file name may be different.
+
+3. Extract the CMake folder and save it somewhere on your computer.
+Note: The binary file has already been built and so there is no need to build it.
+
+### Linux Ubuntu 16.04 ###
+<How to download and build>
+1. Go to https://cmake.org/download/
+
+2. Select the latest version of source distribution (e.g., cmake-3.11.0.tar.gz)
+Note: The actual file name may be different. In that case, replace "cmake-3.11.0.tar.gz" with the actual file name hereafter.
+
+3. Open Terminal and type the following codes.
+
+4. cd ~/Downloads
+Note: Go to the Downloads directory
+
+5. mv cmake-3.11.0.tar.gz ~/Documents/cmake-3.11.0.tar.gz
+Note: Move the file to the Documents directory
+
+6. cd ~/Documents
+Note: Go to the Documents directory
+
+7. tar xvf cmake-3.11.0.tar.gz
+Note: Extract contents of the file
+
+8. cd cmake-3.11.0.tar.gz
+Note: Go to the new directory
+
+9. ./configure
+Note: Run the configuration file
+
+10. make
+Note: Build the program
+
+11. sudo make install
+Note: Install the program
+
+12. export PATH=”/usr/local/bin:$PATH”
+Note: Set an environment path for /usr/local/bin where CMake is located
+
+13. cmake
+Note: Check to see if CMake has been built correctly

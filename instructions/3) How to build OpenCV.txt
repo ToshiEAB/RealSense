@@ -1,0 +1,95 @@
+### Windows 8.1/10 ###
+
+<Notes> 
+The following instructions assume that we will use a C++ compiler associated with Visual Studio.
+Thus, you need to install C++ components on Visual Studio if you haven't done it yet.
+Also you may need to update the C++ components in order to install an appropriate version of the compiler.  
+
+1. Download the latest version of source code (as a .zip folder) from https://github.com/opencv/opencv/releases
+
+2. Extract the opencv folder (e.g., opencv-3.4.1) and move it to the root directory of C drive, that is, C:\
+
+3. Make a new folder named "build" in the opencv folder
+ 
+4. Run cmake-gui.exe
+Note: This file is located in the CMake folder
+
+5. Click the "Browse Source..." button and select the opencv folder (e.g., C:/opencv-3.4.1)
+
+6. Click the "Browse Build..." button and select the build folder (e.g., C:/opencv-3.4.1/build)
+
+7. Click the "Configure" button
+
+8. Select the generator (e.g., "Visual Studio 14 2015 Win64" for a 64-bit OS. "14" means Visual Studio 2015. Check the appropriate number for the version you have.)
+Note: Enter "host=x64" under "Optional toolset to use" to allow for the use of the maximum capacity of RAM
+
+9. Click the "Finish" button
+Note: Many options for advanced programming show up after configuration. For now, just ignore them.
+
+10. Click the "Generate" button 
+
+11. Run OpenCV.sln located in the build folder
+Note: Wait for a minute until parcing completes
+
+12. Change the configuration mode from "Debug" to "Release"
+Note: Wait for a minute until parcing completes
+
+13. Build the source codes: "Build" tab --> "Build Solution" (Alternatively, just press Ctrl + Shift + b)
+Note: Wait for a few minutes. This process creates a bunch of new files/folders in the build folder.
+
+14. Set an Environment Variable: 
+   a) "Control Panel" --> "System & Security" --> "System" --> "Advanced system settings" --> "Environment Variables" --> Select "Path" under "System variables" --> "Edit"
+   b) Add the path where .dll files are located (i.e., C:\opencv-3.4.1\build\bin\Release)
+Note: You need to enter a semicolon ";" to separate an Environment Variable from other Environment Variables.
+
+15. Create a new Environment Variable:
+   a) "Control Panel" --> "System & Security" --> "System" --> "Advanced system settings" --> "Environment Variables" --> Select "Path" under "System variables" --> "Edit"
+   b) Click the "New..." "button under System variables"
+   c) Enter "OpenCV_DIR" at "Variable name:"
+   d) Enter the path for the build folder of OpenCV (i.e., C:\opencv-3.4.1\build) at "Variable value:"
+Note: You need to enter a semicolon ";" to separate an Environment Variable from other Environment Variables.
+
+16. Reboot computer for activating the new Environment Variables
+
+
+### Linux Ubuntu 16.04 ###
+
+1. Open Terminal and enter the following commands
+
+2. sudo apt-get -yV install libeigen3-dev libgtk2.0-dev libgtkglext1-dev libqt4-dev freeglut3-dev
+opencl-headers libtbb-dev libjpeg-dev libjasper-dev libpng++-dev libtiff-dev libopenexr-dev libwebp-dev
+
+Note: These files are necessary for using OpenCV on Ubuntu 16.04
+
+3. Download the latest version of source code (as a .tar.gz folder) from https://github.com/opencv/opencv/releases
+Note: Hereafter let's assume that we will use the 3.4.1 version (Replace the version number hereafter if you will use a later version).
+
+4. cd ~/Downloads
+Note: Go to the Downloads folder
+
+5. mv opencv-3.4.1.tar.gz ~/Documents/opencv-3.4.1.tar.gz
+Note: Move the file to the Document folder
+
+6. cd ~/Documents
+Note: Go to the Documents folder
+
+7. tar xvzf opencv-3.4.1.tar.gz
+Note: Extract contents of the .tar.gz folder
+
+8. cd opencv-3.4.1
+Note: Go to the new directory
+
+9. mkdir build
+Note: Create a new folder named "build"
+
+10. cd build
+Note: Go to the build folder
+
+11. cmake ..
+Note: Configure OpenCV
+
+12. cmake --build . --config Release
+Note: Build OpenCV in Release mode
+
+13. export PATH="~/Documents/opencv-3.4.1/build:$PATH"
+Note: Set an environment variable

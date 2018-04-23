@@ -1,0 +1,16 @@
+### Overview ####
+
+The source code (.cpp file) posted here does not work alone.
+After compiling the code, it has to be linked to the RealSense SDK 2.0 and OpenCV library.
+This process (complie + link) is referred to as "build."
+Some beginners of C++ programming may find that building a source code is more difficult than writing the code.
+There are several different ways to build a source code but I found CMake the easiest way when doing this on different operating systems.
+
+We will use CMake for building OpenCV, RealSense SDK 2.0, and the C++ source code on Windows 8.1/10 or Linux Ubuntu 16.04.
+I do not have access to computers with MacOS (High Sierra) and so I have not tested on that OS.
+Nonetheless, the general steps for building a source code on MacOS should be similar to those for Windows and Linux (Compare the methods between Windows and Linux).
+Alternatively, it is possible to install the Ubuntu OS on Mac computer (i.e., dual boot).
+
+I have not tested the source code on 64-bit computers but not 32-bit ones (i.e., x86 CPU).
+Thus, it may not work on a 32-bit computer. Using a 64-bit computer is recommended for real-time tracking anyway.  
+

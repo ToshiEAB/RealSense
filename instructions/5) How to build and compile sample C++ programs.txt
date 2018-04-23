@@ -1,0 +1,72 @@
+### Windows 8.1/10 ###
+
+<Notes>
+The following instructions assume that we will use a C++ compiler associated with Visual Studio.
+Thus, you need to install C++ components on Visual Studio if you haven't done it yet.
+Also you may need to update the C++ components in order to install an appropriate version of the compiler.  
+
+1. Download a sample C++ program (.cpp file) for running a RealSense camera along with a CMake script (CMakeLists.txt) from https://github.com/ToshiEAB
+Note: You need to change the version number "2.10.3" in CMakeLists.txt if you use a different version of RealSense SDK 2.0
+
+2. Make a new folder with the name of your preference somewhere on computer (e.g., C:/sample) and save both of the .cpp and CMakeList.txt files in this folder
+Note: Let's call this folder "sample folder" hereafter.
+
+3. In the sample folder, make a new folder named "build"
+
+4. Run cmake-gui.exe
+Note: This file is located in the CMake folder.
+
+5. Click the "Browse Source..." button and select the opencv folder  (e.g., C:/sample) 
+
+6. Click the "Browse Build..." button and select the build folder  (e.g., C:/sample/build)
+
+7. Click the "Configure" button
+
+8. Select an appropriate generator (e.g., "Visual Studio 14 2015 Win64" for a 64-bit OS. "14" means Visual Studio 2015. Check the appropriate number for the version you have.)
+Note: Enter "host=x64" under "Optional toolset to use" to allow for the maximum capacity of RAM
+
+9. Click the "Finish" button
+Note: After configuration, an error may show up if the Environment Variable named "OpenCV_DIR" is not set correctly (see "How to build OpenCV.txt")
+
+10. Click the "Generate" button 
+
+11. Run RealSense.sln located in the build folder
+Note: Wait for a minute until parcing completes
+
+12. Change the configuration mode from "Debug" to "Release"
+
+13. Under "Solution Explorer", right-click "RealSense" and then click "Set as StartUp Project"
+
+14. Build the programs: "Build" tab --> "Build Solution" (Alternatively, press Ctrl + Shift + b)
+
+15. Run the program
+
+
+
+### Linux Ubuntu 16.04 ###
+
+1. Download a sample C++ program (.cpp file) for running a RealSense camera along with a CMake script (CMakeLists.txt) from https://github.com/ToshiEAB
+Note: You need to change the version number "2.10.3" in CMakeLists.txt if you use a different version of RealSense SDK 2.0
+
+2. Make a new folder with the name of your preference (e.g., ~/Documents/sample) and save both of the .cpp and CMakeList.txt files in this folder
+Note: Let's call this folder "sample folder" hereafter.
+
+3. Open Terminal and enter the following commands
+
+4. cd ~/Documents/sample
+Note: Go to the sample folder
+
+5. mkdir build
+Note: Create a new folder named "build"
+
+6. cd build
+Note: Go to the build folder
+
+7. cmake ..
+Note: Configure C++ program
+
+8. cmake --build . --config Release
+Note: Build and compile in Release mode
+
+9. ./RealSense
+Note: Run the program
