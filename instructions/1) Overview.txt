@@ -11,6 +11,6 @@ I do not have access to computers with MacOS (High Sierra) and so I have not tes
 Nonetheless, the general steps for building a source code on MacOS should be similar to those for Windows and Linux (Compare the methods between Windows and Linux).
 Alternatively, it is possible to install the Ubuntu OS on Mac computer (i.e., dual boot).
 
-I have not tested the source code on 64-bit computers but not 32-bit ones (i.e., x86 CPU).
+I tested the source code on 64-bit computers but not 32-bit ones (i.e., x86 CPU).
 Thus, it may not work on a 32-bit computer. Using a 64-bit computer is recommended for real-time tracking anyway.  
 
