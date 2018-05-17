@@ -47,7 +47,6 @@ Note: You need to enter a semicolon ";" to separate an Environment Variable from
    b) Click the "New..." "button under System variables"
    c) Enter "OpenCV_DIR" at "Variable name:"
    d) Enter the path for the build folder of OpenCV (i.e., C:\opencv-3.4.1\build) at "Variable value:"
-Note: You need to enter a semicolon ";" to separate an Environment Variable from other Environment Variables.
 
 16. Reboot computer for activating the new Environment Variables
 
